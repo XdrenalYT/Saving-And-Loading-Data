@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqxlyjgptea31"]
+
+[ext_resource type="Script" path="res://Main/Home/GoalRect.gd" id="1_cycoh"]
+[ext_resource type="Texture2D" uid="uid://bm8y2ilyi3jpy" path="res://icon.svg" id="2_28c47"]
+
+[node name="GoalRect" type="ColorRect"]
+custom_minimum_size = Vector2(632, 40)
+offset_right = 632.0
+offset_bottom = 40.0
+color = Color(0.141176, 0.223529, 0.454902, 1)
+script = ExtResource("1_cycoh")
+
+[node name="GoalNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 454.0
+offset_bottom = 40.0
+text = "Goal Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="DateLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 469.0
+offset_right = 632.0
+offset_bottom = 40.0
+text = "1/1/1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 632.0
+offset_bottom = 40.0
+flat = true
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 83.0
+offset_bottom = 45.0
+icon = ExtResource("2_28c47")
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
